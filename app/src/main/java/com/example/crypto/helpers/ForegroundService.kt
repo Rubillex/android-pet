@@ -26,10 +26,6 @@ class ForegroundService : Service() {
             startIntent.putExtra("inputExtra", message)
             ContextCompat.startForegroundService(context, startIntent)
         }
-        fun stopService(context: Context) {
-            val stopIntent = Intent(context, ForegroundService::class.java)
-            context.stopService(stopIntent)
-        }
     }
 
     private var isFirstRun = true
@@ -81,9 +77,8 @@ class ForegroundService : Service() {
         Log.e("BR", "startBroadcast")
         br = object : BroadcastReceiver() {
             override fun onReceive(p0: Context?, p1: Intent?) {
-                var callingSIM = ""
                 val bundle: Bundle? = p1?.extras
-                callingSIM = bundle?.getInt("simId", -1).toString()
+                val callingSIM = bundle?.getInt("simId", -1).toString()
                 Log.e("Message", callingSIM)
                 for (sms in Telephony.Sms.Intents.getMessagesFromIntent(p1)) {
                     Log.e("Message", sms.displayOriginatingAddress)
@@ -97,9 +92,7 @@ class ForegroundService : Service() {
 
     override fun onDestroy() {
         try {
-            if (br != null) {
-                unregisterReceiver(br)
-            }
+            unregisterReceiver(br)
         } catch (e: Exception) {
             Log.e("EEE", e.toString())
         }
