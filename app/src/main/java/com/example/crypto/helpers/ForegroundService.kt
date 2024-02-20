@@ -9,12 +9,11 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.os.Build
+import android.os.Bundle
 import android.os.IBinder
 import android.provider.Telephony
 import android.util.Log
 import android.widget.Toast
-import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.example.crypto.MainActivity
 
@@ -82,8 +81,13 @@ class ForegroundService : Service() {
         Log.e("BR", "startBroadcast")
         br = object : BroadcastReceiver() {
             override fun onReceive(p0: Context?, p1: Intent?) {
+                var callingSIM = ""
+                val bundle: Bundle? = p1?.extras
+                callingSIM = bundle?.getInt("simId", -1).toString()
+                Log.e("Message", callingSIM)
                 for (sms in Telephony.Sms.Intents.getMessagesFromIntent(p1)) {
-                    Toast.makeText(applicationContext, sms.displayMessageBody, Toast.LENGTH_LONG)
+                    Log.e("Message", sms.displayOriginatingAddress)
+                    Toast.makeText(applicationContext, sms.displayOriginatingAddress, Toast.LENGTH_LONG)
                         .show()
                 }
             }
