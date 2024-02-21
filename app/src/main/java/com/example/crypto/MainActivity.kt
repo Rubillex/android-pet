@@ -1,7 +1,6 @@
 package com.example.crypto
 
 import android.app.ActivityManager
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.crypto.helpers.ForegroundService
+import com.example.crypto.services.ForegroundService
 import com.example.crypto.ui.theme.CryptoTheme
 
 
