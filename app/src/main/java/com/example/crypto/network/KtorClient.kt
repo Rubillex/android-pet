@@ -20,7 +20,7 @@ import kotlinx.serialization.json.Json
 
 class KtorClient {
     private val client = HttpClient(OkHttp) {
-        defaultRequest { url("https://webhook.site/fef98b9a-cf27-45f4-b287-8f03309d34d5") }
+        defaultRequest { url("https://webhook.site") }
 
         install(Logging) {
             logger = Logger.SIMPLE
@@ -42,7 +42,6 @@ class KtorClient {
 
     suspend fun getMessage(): MessageRequest {
         return client.get("/fef98b9a-cf27-45f4-b287-8f03309d34d5").body()
-//        return client.post("/").body()
     }
 }
 

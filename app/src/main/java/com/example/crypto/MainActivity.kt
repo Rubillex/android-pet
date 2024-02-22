@@ -10,12 +10,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.crypto.services.ForegroundService
+import com.example.crypto.ui.screens.MainScreen
 import com.example.crypto.ui.theme.CryptoTheme
 
 
@@ -25,15 +31,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.e("PERMISSION", (ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS)
-                == PackageManager.PERMISSION_GRANTED).toString()
-        )
-        Log.e("PERMISSION", (ContextCompat.checkSelfPermission(this, android.Manifest.permission.FOREGROUND_SERVICE)
-                == PackageManager.PERMISSION_GRANTED).toString()
-        )
-        Log.e("PERMISSION", (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS)
-                == PackageManager.PERMISSION_GRANTED).toString()
-        )
         if (
                 ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS)
                 == PackageManager.PERMISSION_GRANTED
@@ -59,7 +56,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    MainScreen()
                 }
             }
         }
@@ -102,6 +99,18 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
+    )
+}
+
+@Composable
+fun LoginScreen() {
+    var text by rememberSaveable { mutableStateOf("") }
+
+    TextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Label") },
+        singleLine = true
     )
 }
 
