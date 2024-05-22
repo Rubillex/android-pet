@@ -1,4 +1,4 @@
-package com.example.crypto.ui.screens
+package com.example.di1.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -33,8 +33,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.crypto.R
-import com.example.crypto.viewModels.ApplicationViewModel
+import com.example.di1.R
+import com.example.di1.viewModels.ApplicationViewModel
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable

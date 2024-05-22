@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.crypto"
+    namespace = "com.example.di1"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.crypto"
+        applicationId = "com.example.di1"
         minSdk = 29
         targetSdk = 34
         versionCode = 1

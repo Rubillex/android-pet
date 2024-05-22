@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "crypto"
+rootProject.name = "di1"
 include(":app")
  

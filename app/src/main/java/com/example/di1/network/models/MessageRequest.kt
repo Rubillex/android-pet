@@ -1,4 +1,4 @@
-package com.example.crypto.network.models
+package com.example.di1.network.models
 
 import kotlinx.serialization.Serializable
 

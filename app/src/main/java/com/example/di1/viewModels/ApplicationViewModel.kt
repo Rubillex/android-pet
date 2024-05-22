@@ -1,4 +1,4 @@
-package com.example.crypto.viewModels
+package com.example.di1.viewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

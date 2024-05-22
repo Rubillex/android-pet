@@ -1,6 +1,6 @@
-package com.example.crypto.network
+package com.example.di1.network
 
-import com.example.crypto.network.models.MessageRequest
+import com.example.di1.network.models.MessageRequest
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

@@ -1,4 +1,4 @@
-package com.example.crypto.ui.screens
+package com.example.di1.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.crypto.viewModels.ApplicationViewModel
+import com.example.di1.viewModels.ApplicationViewModel
 
 @Composable
 fun MainScreen(

@@ -1,4 +1,4 @@
-package com.example.crypto.services
+package com.example.di1.services
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -16,12 +16,12 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.room.Room
-import com.example.crypto.MainActivity
-import com.example.crypto.network.KtorClient
-import com.example.crypto.network.models.MessageRequest
-import com.example.crypto.room.Message
-import com.example.crypto.room.MessageDao
-import com.example.crypto.room.MessageDatabase
+import com.example.di1.MainActivity
+import com.example.di1.network.KtorClient
+import com.example.di1.network.models.MessageRequest
+import com.example.di1.room.Message
+import com.example.di1.room.MessageDao
+import com.example.di1.room.MessageDatabase
 import io.ktor.http.HttpStatusCode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -113,7 +113,7 @@ class ForegroundService : Service() {
         val notification = Notification.Builder(this, chanelId)
             .setContentTitle("Foreground Service Kotlin Example")
             .setContentText("test")
-            .setSmallIcon(com.example.crypto.R.drawable.ic_launcher_foreground)
+            .setSmallIcon(com.example.di1.R.drawable.ic_launcher_foreground)
             .setContentIntent(pendingIntent)
 
         startForeground(1001, notification.build())

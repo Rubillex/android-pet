@@ -1,4 +1,4 @@
-package com.example.crypto.room
+package com.example.di1.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
