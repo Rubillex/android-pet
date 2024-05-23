@@ -1,9 +1,7 @@
 package com.example.di1
 
-import android.app.ActivityManager
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +18,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.di1.services.ForegroundService
 import com.example.di1.ui.screens.MainScreen
 import com.example.di1.ui.theme.di1Theme
 
@@ -47,33 +44,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Composable
-fun LoginScreen() {
-    var text by rememberSaveable { mutableStateOf("") }
-
-    TextField(
-        value = text,
-        onValueChange = { text = it },
-        label = { Text("Label") },
-        singleLine = true
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    di1Theme {
-        Greeting("Android")
     }
 }

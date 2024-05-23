@@ -19,7 +19,7 @@ fun MainScreen(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ){
-        when (val state = applicationViewModel.uiState.collectAsState().value) {
+        when (applicationViewModel.uiState.collectAsState().value) {
             ApplicationViewModel.ApplicationState.CheckAuth -> CheckAuth(applicationViewModel = applicationViewModel)
             ApplicationViewModel.ApplicationState.LoginForm -> LoginScreen(applicationViewModel = applicationViewModel)
             ApplicationViewModel.ApplicationState.Profile -> TODO()
